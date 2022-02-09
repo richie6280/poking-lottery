@@ -9,6 +9,7 @@ export class AppComponent implements OnInit {
   title = 'poking-lottery';
 
   win: boolean = true;
+  //客製化可選圖片
   logo: string = "url('../assets/logo.png')";
   prize: string = "url('../assets/下載.jpeg')";
   banner: string = "#fff";
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit {
 
     const banner = document.querySelector('.banner') as HTMLElement;
     banner.style.background = `${this.banner}`;
+    banner.style.backgroundSize = 'contain';
   }
 
   poking(e: any): void {
@@ -73,8 +75,8 @@ export class AppComponent implements OnInit {
     const pokingLottery = document.querySelector('.container') as HTMLElement;
     const preventRepeat = document.createElement('div');
     pokingLottery.append(preventRepeat);
-    preventRepeat.style.width = '100vw';
-    preventRepeat.style.height = '100vh';
+    preventRepeat.style.width = '96vw';
+    preventRepeat.style.height = '96vw';
     preventRepeat.style.zIndex = '1';
     preventRepeat.style.position = 'absolute';
   }
